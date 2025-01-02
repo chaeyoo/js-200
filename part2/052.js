@@ -1,4 +1,4 @@
-// 052
+// 052 클래스 상속 이해하기
 
 class Chart {
     constructor(width, height) {
