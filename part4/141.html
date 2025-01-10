@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM 이해하기</title>
+</head>
+
+<body>
+    <div id="div1">hello DOM</div>
+    <ul>
+        <li>list item1</li>
+        <li>list item2</li>
+    </ul>
+    <p>문서 객체 모델은 인터페이스, 인터페이스란 해당 타입에 어떤 속성과 메소드들이 존재해야 하는지 기술만 하고
+        실제 구현은 각 구현체에서 다르게 구현할 수 있게 약속을 정의해놓은 것
+    </p>
+
+    <script>
+        const div1El = document.getElementById('div1');
+        console.log(div1El.innerHTML);
+
+        console.log(div1El.nodeType);
+        console.log(div1El.nodeType === Node.ELEMENT_NODE);
+
+        console.log(div1El.constructor);
+        console.log(div1El instanceof HTMLDivElement);
+        console.log(div1El instanceof HTMLElement);
+        console.log(div1El instanceof Node);
+        console.log(Element.prototype);
+        console.log(div1El.tagName);
+
+        const div1El2 = document.querySelector('#div1');
+        console.log(div1El2.innerHTML);
+
+        const liEls = document.querySelectorAll('ul li');
+        console.log(liEls);
+
+    </script>
+</body>
+
+</html>

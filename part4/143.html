@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM 속성과 태그 속성 이해하기</title>
+</head>
+
+<body>
+    <div id="div1" class="div-class">DIV 태그</div>
+    <input type="text" id="input1" value="jay">
+
+    <script>
+        const div1El = document.getElementById('div1');
+        const input1 = document.getElementById('input1');
+
+        console.log(div1El.hasAttribute('id'));
+        console.log(div1El.getAttribute('id'));
+        console.log(div1El.id)
+
+        div1El.removeAttribute('id');
+        console.log(div1El.id);
+        div1El.setAttribute('id', 'new-id')
+        console.log(div1El.id)
+
+
+        div1El.id = 'new-id-2';
+        console.log(div1El.getAttribute('id'));
+
+        console.log(div1El.getAttribute('class')); // class 어트리뷰트 
+        console.log(div1El.class); // 프로퍼티는 class로 존재하지 않고 className으로 존재
+        console.log(div1El.className);
+
+        // class 어트리뷰트를 변경하면 className 프로퍼티가 변경
+        // className 프로퍼티를 변경하면 class 어트리뷰트 변경
+        div1El.setAttribute('class', 'new-div-class');
+        console.log(div1El.className);
+        div1El.className = 'new-div-class2';
+        console.log(div1El.getAttribute('class'));
+
+        const valueAttr = input1.getAttribute('value');
+        console.log(valueAttr);
+        console.log(input1.value);
+        input1.value = 'jay2'; // 프로퍼티값 변경해도
+        console.log(input1.getAttribute('value')) // 어트리뷰트 값은 변경되지 않음
+    </script>
+</body>
+
+</html>
